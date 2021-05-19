@@ -13,26 +13,30 @@
 body {
   background-color: var(--bg-body);
   font-family: 'Poppins', sans-serif;
+  max-width: 1024px;
+  /* max-height: 768px; */
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .main-header {
   text-align: center;
-  padding: 50px 40px;
+  padding: 50px 20px;
 }
 
 .main-title {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-weight: 200;
+  color:var(--bold-text);
 }
 
 .subtitle {
-  /* background-color: green; */
+  color: var(--light-text);
 }
 
 .cards {
   display: grid;
   padding: 0 20px;
-
 }
 
 .card { 
@@ -72,10 +76,12 @@ body {
 
 .card-title {
   margin: 0;
+  color: var(--bold-text);
 }
 
 .card-description {
   margin: 0;
+  color: var(--light-text);
 }
 
 .card:first-child::after {
@@ -99,4 +105,60 @@ body {
   position: absolute;
   right:35px;
   bottom: 15px;
+}
+
+/* Para Desktop */
+
+@media screen and (min-width: 768px) {
+
+  .main-header {
+    width: 550px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px 20px 30px 20px;
+  }
+
+  .main-title {
+    padding: 0px 112px;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+    color: var(--light-text);
+  }
+
+  .cards {
+    grid-template-columns: repeat(3, 270px);
+    grid-template-rows: repeat(2, 230px);
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .card {
+    margin-bottom: 0;
+  }
+
+  .card:first-child,
+  .card:last-child {
+    margin-top: 140px;
+  }
+
+  .card:nth-child(3) {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+  }
+
+  .card-title {
+    font-size: 1em;
+    color:var(--bold-text)
+  }
+
+  .card-description {
+    font-size: 0.8rem;
+    color: var(--light-text);
+  }
+
+  .card::after {
+    content: var(--icon);
+  }
 }

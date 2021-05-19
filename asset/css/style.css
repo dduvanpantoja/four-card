@@ -1,1 +1,102 @@
+:root {
+  --bg-body: #fafafa;
+  --light-text: #aaabb3;
+  --bold-text: #4f4e5d;
+  /* cards */
+  --white: #fff;
+  --cyan: #4fcdcd;
+  --red: #d55c60;
+  --orange: #f4ae56;
+  --blue: #5a9ce5;
+}
+
+body {
+  background-color: var(--bg-body);
   font-family: 'Poppins', sans-serif;
+}
+
+.main-header {
+  text-align: center;
+  padding: 50px 40px;
+}
+
+.main-title {
+  font-size: 1.5rem;
+  font-weight: 200;
+}
+
+.subtitle {
+  /* background-color: green; */
+}
+
+.cards {
+  display: grid;
+  padding: 0 20px;
+
+}
+
+.card { 
+  padding: 25px;
+  position: relative;
+  height: 185px;
+  margin-bottom: 25px;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px #83a6d288;
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+}
+
+.card--cyan::before {
+  background-color: var(--cyan);
+}
+
+.card--red::before {
+  background-color: var(--red);
+}
+
+.card--orange::before {
+  background-color: var(--orange);
+}
+
+.card--blue:before {
+  background-color: var(--blue);
+}
+
+.card-title {
+  margin: 0;
+}
+
+.card-description {
+  margin: 0;
+}
+
+.card:first-child::after {
+  --icon: url(../icons/icon-supervisor.svg);
+}
+
+.card:nth-child(2)::after {
+  --icon: url(../icons/icon-team-builder.svg);
+}
+
+.card:nth-child(3)::after {
+  --icon: url(../icons/icon-karma.svg);
+}
+
+.card:nth-child(4)::after {
+  --icon: url(../icons/icon-calculator.svg);
+}
+
+.card::after {
+  content: var(--icon);
+  position: absolute;
+  right:35px;
+  bottom: 15px;
+}
